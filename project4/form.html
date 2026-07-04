@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log in or sign up</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="form.css">
+</head>
+<body>
+
+<main class="card">
+
+  <div class="brand">SI</div>
+
+  <div class="tabs" role="tablist" aria-label="Choose form">
+    <button type="button" class="tab is-active" id="tab-login" role="tab"
+            aria-selected="true" aria-controls="login-panel">Log in</button>
+    <button type="button" class="tab" id="tab-signup" role="tab"
+            aria-selected="false" aria-controls="signup-panel">Sign up</button>
+  </div>
+
+  <!-- ============== LOGIN ============== -->
+  <section id="login-panel" role="tabpanel" aria-labelledby="tab-login">
+    <h1 class="heading">Welcome back</h1>
+    <p class="subheading">Log in to continue.</p>
+
+    <form id="login-form" novalidate>
+
+      <div class="field" data-field="loginEmail">
+        <label for="loginEmail">Email</label>
+        <input type="email" id="loginEmail" name="loginEmail" autocomplete="email"
+               aria-describedby="loginEmail-error" aria-invalid="false" placeholder="you@example.com">
+        <p class="error" id="loginEmail-error" aria-live="polite"></p>
+      </div>
+
+      <div class="field" data-field="loginPassword">
+        <label for="loginPassword">Password</label>
+        <div class="input-wrap">
+          <input type="password" id="loginPassword" name="loginPassword" autocomplete="current-password"
+                 aria-describedby="loginPassword-error" aria-invalid="false" placeholder="Enter your password">
+          <button type="button" class="reveal" data-target="loginPassword" aria-label="Show password">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+        <p class="error" id="loginPassword-error" aria-live="polite"></p>
+      </div>
+
+      <div class="row-between">
+        <label class="checkbox">
+          <input type="checkbox" id="rememberMe" name="rememberMe">
+          <span>Remember me</span>
+        </label>
+        <a href="#" class="link" id="forgot-link">Forgot password?</a>
+      </div>
+
+      <button type="submit" class="btn" id="login-submit">Log in</button>
+
+      <p class="banner" id="login-banner" role="alert" aria-live="assertive"></p>
+    </form>
+  </section>
+
+  <!-- ============== SIGNUP ============== -->
+  <section id="signup-panel" role="tabpanel" aria-labelledby="tab-signup" hidden>
+    <h1 class="heading">Create your account</h1>
+    <p class="subheading">It only takes a minute.</p>
+
+    <form id="signup-form" novalidate>
+
+      <div class="field" data-field="signupName">
+        <label for="signupName">Full name</label>
+        <input type="text" id="signupName" name="signupName" autocomplete="name"
+               aria-describedby="signupName-error" aria-invalid="false" placeholder="Jane Doe">
+        <p class="error" id="signupName-error" aria-live="polite"></p>
+      </div>
+
+      <div class="field" data-field="signupEmail">
+        <label for="signupEmail">Email</label>
+        <input type="email" id="signupEmail" name="signupEmail" autocomplete="email"
+               aria-describedby="signupEmail-error" aria-invalid="false" placeholder="you@example.com">
+        <p class="error" id="signupEmail-error" aria-live="polite"></p>
+      </div>
+
+      <div class="field" data-field="signupPassword">
+        <label for="signupPassword">Password</label>
+        <div class="input-wrap">
+          <input type="password" id="signupPassword" name="signupPassword" autocomplete="new-password"
+                 aria-describedby="signupPassword-hint signupPassword-error" aria-invalid="false" placeholder="Create a password">
+          <button type="button" class="reveal" data-target="signupPassword" aria-label="Show password">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+        <div class="strength-track" aria-hidden="true"><div class="strength-fill" id="strength-fill"></div></div>
+        <p class="hint" id="signupPassword-hint">At least 8 characters, 1 uppercase letter, 1 number</p>
+        <p class="error" id="signupPassword-error" aria-live="polite"></p>
+      </div>
+
+      <div class="field" data-field="signupConfirmPassword">
+        <label for="signupConfirmPassword">Confirm password</label>
+        <input type="password" id="signupConfirmPassword" name="signupConfirmPassword" autocomplete="new-password"
+               aria-describedby="signupConfirmPassword-error" aria-invalid="false" placeholder="Re-enter your password">
+        <p class="error" id="signupConfirmPassword-error" aria-live="polite"></p>
+      </div>
+
+      <label class="checkbox checkbox--terms" data-field="signupTerms">
+        <input type="checkbox" id="signupTerms" name="signupTerms" aria-describedby="signupTerms-error" aria-invalid="false">
+        <span>I agree to the terms and conditions</span>
+      </label>
+      <p class="error" id="signupTerms-error" aria-live="polite"></p>
+
+      <button type="submit" class="btn" id="signup-submit">Create account</button>
+
+      <p class="banner" id="signup-banner" role="alert" aria-live="assertive"></p>
+    </form>
+  </section>
+
+</main>
+
+<script src="form.js"></script>
+</body>
+</html>
